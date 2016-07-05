@@ -1,0 +1,13 @@
+group 'com.n1k1ch.nstat'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'ear'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    deploy project(':nstat-server-ejb')
+    deploy project(path: ':nstat-server-web', configuration: 'archives')
+}

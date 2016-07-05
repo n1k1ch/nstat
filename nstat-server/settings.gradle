@@ -1,0 +1,5 @@
+rootProject.name = 'nstat-server'
+include 'nstat-server-ear'
+include 'nstat-server-ejb'
+include 'nstat-server-web'
+
