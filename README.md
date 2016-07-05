@@ -41,7 +41,7 @@ Put `module.xml` with following contents to the same directory:
 
 In `jboss-cli.bat`:
 
-```
+```bash
 /subsystem=datasources/jdbc-driver=com.mysql:add(driver-name=com.mysql,driver-module-name=com.mysql,driver-xa-datasource-class-name=com.mysql.cj.jdbc.MysqlXADataSource)
 ```
 
