@@ -67,3 +67,8 @@ data-source add \
 --idle-timeout-minutes=60
 data-source enable --name=NStatDS
 ```
+
+
+POSTMan collection
+===
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/747aed0e2a412bfc682f)
