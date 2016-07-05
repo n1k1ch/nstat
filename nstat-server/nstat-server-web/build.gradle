@@ -13,6 +13,7 @@ dependencies {
     providedCompile 'org.jboss.resteasy:resteasy-jaxrs:3.0.11.Final'
     providedCompile 'org.jboss.resteasy:resteasy-jaxb-provider:3.0.11.Final'
     providedCompile project(':nstat-server-ejb')
+    providedCompile 'log4j:log4j:1.2.17'
 }
 
 war {
