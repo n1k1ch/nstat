@@ -1,6 +1,6 @@
 package com.n1k1ch.nstat.api.service;
 
-import com.n1k1ch.nstat.db.User;
+import com.n1k1ch.nstat.db.entity.User;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

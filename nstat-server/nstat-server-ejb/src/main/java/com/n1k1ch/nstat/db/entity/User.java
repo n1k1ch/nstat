@@ -1,4 +1,4 @@
-package com.n1k1ch.nstat.db;
+package com.n1k1ch.nstat.db.entity;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;

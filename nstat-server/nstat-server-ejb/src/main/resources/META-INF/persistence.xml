@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="nstat">
+        <jta-data-source>java:jboss/datasources/NStatDS</jta-data-source>
+        <class>com.n1k1ch.nstat.db.entity.Entry</class>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+        </properties>
+    </persistence-unit>
+</persistence>
