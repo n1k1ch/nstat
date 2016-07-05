@@ -1,5 +1,7 @@
-Tested on Wildfly 10.0.10.Final (http://wildfly.org/downloads/)
-===
+*Backend: JavaEE RESTEasy App*
+====
+
+Tested on [Wildfly 10.0.10.Final](http://wildfly.org/downloads/)
 
 Create database
 ===
@@ -20,8 +22,9 @@ CREATE TABLE IF NOT EXISTS `entry` (
 
 Add MySQL driver to JBoss
 ===
-Put `mysql-connector-java-6.0.3.jar` to `\JBoss\wildfly-10.0.0.Final\modules\system\layers\base\com\mysql\main`
-Put `module.xml` to the same directory. Contents are:
+Put `mysql-connector-java-6.0.3.jar` to `\wildfly-10.0.0.Final\modules\system\layers\base\com\mysql\main`
+
+Put `module.xml` with following contents to the same directory:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -36,7 +39,7 @@ Put `module.xml` to the same directory. Contents are:
 </module>
 ```
 
-Execute following in `jboss-cli.bat`:
+In `jboss-cli.bat`:
 
 ```
 /subsystem=datasources/jdbc-driver=com.mysql:add(driver-name=com.mysql,driver-module-name=com.mysql,driver-xa-datasource-class-name=com.mysql.cj.jdbc.MysqlXADataSource)
@@ -44,6 +47,8 @@ Execute following in `jboss-cli.bat`:
 
 Add datasource to JBoss
 ===
+
+In `jboss-cli.bat`:
 
 ```
 data-source add \
@@ -72,3 +77,6 @@ data-source enable --name=NStatDS
 POSTMan collection
 ===
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/747aed0e2a412bfc682f)
+
+
+---
