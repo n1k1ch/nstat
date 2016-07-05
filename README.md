@@ -50,7 +50,7 @@ Add datasource to JBoss
 
 In `jboss-cli.bat`:
 
-```
+```bash
 data-source add \
 --name=NStatDS \
 --driver-name=com.mysql \
