@@ -3,6 +3,7 @@ package com.n1k1ch.nstat.api.service;
 import com.n1k1ch.nstat.db.entity.Entry;
 import com.n1k1ch.nstat.db.service.EntryDbService;
 
+import javax.annotation.security.DenyAll;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -56,6 +57,7 @@ public class EntriesService {
 		return Response.status(200).entity(result.get()).build();
 	}
 
+	@DenyAll
 	@DELETE
 	@Path("/{id}")
 	@Produces("application/json")

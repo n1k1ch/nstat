@@ -13,7 +13,7 @@
     </context-param>
     <context-param>
         <param-name>resteasy.providers</param-name>
-        <param-value>com.n1k1ch.nstat.api.security.SecurityInterceptor</param-value>
+        <param-value>com.n1k1ch.nstat.api.security.SecurityInterceptorExample</param-value>
     </context-param>
     <servlet>
         <servlet-name>RESTEasyService</servlet-name>
@@ -27,4 +27,25 @@
         <servlet-name>RESTEasyService</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
+    <!--<security-role>
+        <description>Any rol </description>
+        <role-name>*</role-name>
+    </security-role>
+    <security-constraint>
+        <display-name>Area secured</display-name>
+        <web-resource-collection>
+            <web-resource-name>protected_resources</web-resource-name>
+            <url-pattern>/api/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>User with any role</description>
+            <role-name>*</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>DIGEST</auth-method>
+        <realm-name>MyRealmName</realm-name>
+    </login-config>-->
 </web-app>
