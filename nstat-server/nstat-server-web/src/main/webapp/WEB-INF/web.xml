@@ -12,9 +12,13 @@
         <param-value>/api</param-value>
     </context-param>
     <context-param>
+        <param-name>resteasy.role.based.security</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <!--<context-param>
         <param-name>resteasy.providers</param-name>
         <param-value>com.n1k1ch.nstat.api.security.SecurityInterceptorExample</param-value>
-    </context-param>
+    </context-param>-->
     <servlet>
         <servlet-name>RESTEasyService</servlet-name>
         <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
@@ -27,7 +31,7 @@
         <servlet-name>RESTEasyService</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
-    <!--<security-role>
+    <security-role>
         <description>Any rol </description>
         <role-name>*</role-name>
     </security-role>
@@ -45,7 +49,7 @@
         </auth-constraint>
     </security-constraint>
     <login-config>
-        <auth-method>DIGEST</auth-method>
-        <realm-name>MyRealmName</realm-name>
-    </login-config>-->
+        <auth-method>BASIC</auth-method>
+        <!--<realm-name>nstatSecurityDomain</realm-name>-->
+    </login-config>
 </web-app>

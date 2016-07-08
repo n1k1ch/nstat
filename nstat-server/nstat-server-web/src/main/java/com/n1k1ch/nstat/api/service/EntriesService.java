@@ -6,6 +6,7 @@ import com.n1k1ch.nstat.db.service.EntryDbService;
 import javax.annotation.security.DenyAll;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.naming.InitialContext;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.net.URI;
@@ -25,6 +26,7 @@ public class EntriesService {
 	@Produces("application/json")
 	public Response getAll() {
 		return Response.ok(entryDbService.findAll()).build();
+		//return Response.ok("Hola!").build();
 	}
 
 	@POST

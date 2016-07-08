@@ -11,5 +11,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compileOnly 'org.hibernate:hibernate-core:4.2.0.Final'
     compileOnly 'org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.Final'
+    compileOnly 'org.jboss.ejb3:jboss-ejb3-ext-api:2.0.0'
     compileOnly 'javax:javaee-api:7.0'
 }

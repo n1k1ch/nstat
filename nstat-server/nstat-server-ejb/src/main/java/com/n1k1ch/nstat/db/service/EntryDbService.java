@@ -1,8 +1,10 @@
 package com.n1k1ch.nstat.db.service;
 
 import com.n1k1ch.nstat.db.entity.Entry;
+import org.jboss.ejb3.annotation.SecurityDomain;
 
 import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -20,11 +22,13 @@ import java.util.Optional;
  */
 @Stateless
 @LocalBean
+@SecurityDomain("nstatSecurityDomain")
 public class EntryDbService {
 
 	@PersistenceContext(unitName = "nstat")
 	private EntityManager em;
 
+	//@RolesAllowed("USER")
 	@PermitAll
 	public List<Entry> findAll() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();

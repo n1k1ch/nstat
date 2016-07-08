@@ -73,6 +73,22 @@ data-source add \
 data-source enable --name=NStatDS
 ```
 
+Add security domain to JBoss
+
+```xml
+<security-domain name="nstatSecurityDomain" cache-type="default">
+        <authentication>
+            <login-module code="Database" flag="required">
+                <module-option name="dsJndiName" value="java:jboss/datasources/NStatDS"/>
+                <module-option name="principalsQuery" value="SELECT password_hash FROM user WHERE username=?"/>
+                <module-option name="rolesQuery" value="SELECT ur.role_name, 'Roles' FROM user u INNER JOIN user_role ur on ur.user_id = u.id WHERE u.username=?"/>
+                <module-option name="hashAlgorithm" value="SHA-256"/>
+                <module-option name="hashEncoding" value="base64"/>
+            </login-module>
+        </authentication>
+    </security-domain>
+```
+
 
 POSTMan collection
 ===
