@@ -4,6 +4,7 @@ import com.n1k1ch.nstat.db.entity.Entry;
 import com.n1k1ch.nstat.db.service.EntryDbService;
 
 import javax.annotation.security.DenyAll;
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.naming.InitialContext;
@@ -17,6 +18,7 @@ import java.util.Optional;
  */
 @Path("/entries")
 @RequestScoped
+/*@RolesAllowed("USER")*/
 public class EntriesService {
 
 	@Inject
@@ -26,7 +28,6 @@ public class EntriesService {
 	@Produces("application/json")
 	public Response getAll() {
 		return Response.ok(entryDbService.findAll()).build();
-		//return Response.ok("Hola!").build();
 	}
 
 	@POST

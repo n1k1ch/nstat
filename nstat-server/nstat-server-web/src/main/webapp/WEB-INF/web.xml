@@ -15,10 +15,6 @@
         <param-name>resteasy.role.based.security</param-name>
         <param-value>true</param-value>
     </context-param>
-    <!--<context-param>
-        <param-name>resteasy.providers</param-name>
-        <param-value>com.n1k1ch.nstat.api.security.SecurityInterceptorExample</param-value>
-    </context-param>-->
     <servlet>
         <servlet-name>RESTEasyService</servlet-name>
         <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
@@ -32,9 +28,16 @@
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
     <security-role>
-        <description>Any rol </description>
+        <description>Any role</description>
         <role-name>*</role-name>
     </security-role>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Registration</web-resource-name>
+            <description>Anyone can register</description>
+            <url-pattern>/api/users/register</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
     <security-constraint>
         <display-name>Area secured</display-name>
         <web-resource-collection>
@@ -50,6 +53,6 @@
     </security-constraint>
     <login-config>
         <auth-method>BASIC</auth-method>
-        <!--<realm-name>nstatSecurityDomain</realm-name>-->
+        <realm-name>nstatSecurityDomain</realm-name>
     </login-config>
 </web-app>

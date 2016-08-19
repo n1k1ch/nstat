@@ -12,7 +12,7 @@ public class NStatApplication extends Application {
 	private Set<Class<?>> classes = new HashSet<>();
 
 	public NStatApplication() {
-		singletons.add(new UsersService());
+		classes.add(UsersService.class);
 		//singletons.add(new EntriesService());
 
 		classes.add(EntriesService.class);
