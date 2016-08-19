@@ -55,4 +55,9 @@
         <auth-method>BASIC</auth-method>
         <realm-name>nstatSecurityDomain</realm-name>
     </login-config>
+
+    <context-param>
+        <param-name>resteasy.providers</param-name>
+        <param-value>com.n1k1ch.nstat.api.service.NStatRestExceptionHandler</param-value>
+    </context-param>
 </web-app>
